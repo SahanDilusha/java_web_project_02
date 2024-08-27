@@ -1,5 +1,5 @@
 function uerRegistration() {
-
+    
     var mobile = document.getElementById("mobile").value;
     console.log(mobile);
     var name = document.getElementById("name").value;
@@ -10,13 +10,13 @@ function uerRegistration() {
     console.log(password);
     var mobile = document.getElementById("mobile").value;
     console.log(mobile);
-
-    var gender;
-
-    if (document.getElementById("male").checked) {
-        gender = "Male";
-    } else {
-        gender = "Female";
-    }
-
+    var gender = document.getElementById("male").checked ? "Male" : "Female";
+    console.log(gender);
+    
+    var obj = {mobile: mobile, name: name, country: country, password: password, gender: gender};
+    
+    var jsonObj = JSON.stringify(obj);
+    
+    console.log(jsonObj);
+    
 }
