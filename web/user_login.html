@@ -7,21 +7,21 @@
     </head>
     <body>
 
-        <h1>User Login</h1>
+        <div class="h1-div">User Login</div>
         <div class="error-text" id="error-text"></div>
         <div class="form">
 
             <div class="item-div">
                 <div class="item-title">Mobile</div>
-                <input type="text" name="mobile" class="text-input">
+                <input type="text" id="mobile" class="text-input">
             </div>
 
             <div class="item-div">
                 <div class="item-title">Password</div>
-                <input type="password" name="password" class="text-input">
+                <input type="password" id="password" class="text-input">
             </div>
 
-            <input type="submit" value="Login" class="text-input"/>
+            <input type="submit" value="Login" class="text-input" onclick="userLogin();"/>
             <a href="user_registration.html">Create Account?</a>
         </div>
 

@@ -41,3 +41,7 @@ function uerRegistration() {
     request.send(jsonObj);
 
 }
+
+function userLogin() {
+    
+}
