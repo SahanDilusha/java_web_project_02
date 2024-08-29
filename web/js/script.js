@@ -67,3 +67,24 @@ function userLogin() {
     request.send(JSON.stringify(obj));
 
 }
+
+function userLogout() {
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+
+        if (request.readyState === 4 && request.status === 200) {
+            var respons = JSON.parse(request.responseText);
+
+            if (respons.msg === "success") {
+                window.location.href = "index.html";
+            } else {
+                error.innerHTML = "Invalid Login Details!";
+            }
+        }
+    };
+    
+    request.open("POST", "User_Logout", true);
+    request.send();
+    
+}

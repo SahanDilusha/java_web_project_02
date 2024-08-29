@@ -35,6 +35,10 @@ public class User_Login extends HttpServlet {
             jsonObject.addProperty("msg", "error2");
         }
 
+        response.setContentType("application/json");
+        System.out.println(jsonObject);
+        response.getWriter().write(gson.toJson(jsonObject));
+
     }
 
 }
