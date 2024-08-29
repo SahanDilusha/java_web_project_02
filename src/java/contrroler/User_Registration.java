@@ -25,8 +25,6 @@ public class User_Registration extends HttpServlet {
 
         HashMap<String, User> userMap = (HashMap<String, User>) req.getServletContext().getAttribute("userMap");
 
-        
-        
         JsonObject jsonObject = new JsonObject();
 
         if (userMap.containsKey(user.getMobile())) {
