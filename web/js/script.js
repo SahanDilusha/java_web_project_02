@@ -77,14 +77,12 @@ function userLogout() {
             var respons = JSON.parse(request.responseText);
 
             if (respons.msg === "success") {
-                window.location.href = "index.html";
-            } else {
-                error.innerHTML = "Invalid Login Details!";
+                window.location.href = "user_login.html";
             }
         }
     };
-    
+
     request.open("POST", "User_Logout", true);
     request.send();
-    
+
 }
