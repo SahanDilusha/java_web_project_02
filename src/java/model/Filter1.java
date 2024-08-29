@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter (urlPatterns = {"/index.jsp"})
+@WebFilter (urlPatterns = {"/index.html"})
 public class Filter1 implements Filter{
 
     @Override

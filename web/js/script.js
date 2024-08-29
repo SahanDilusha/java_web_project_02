@@ -29,7 +29,7 @@ function uerRegistration() {
                 error.innerHTML = "Mobile number already used!";
             }
         }
-    }
+    };
 
     request.open("POST", "User_Registration", true);
     request.setRequestHeader("Content-Type", "application/json");

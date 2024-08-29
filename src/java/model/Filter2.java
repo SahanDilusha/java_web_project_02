@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter(urlPatterns = {"/user_registration.jsp","/user_login.jsp"})
+@WebFilter(urlPatterns = {"/user_registration.html","/user_login.html"})
 public class Filter2 implements Filter{
 
     @Override
