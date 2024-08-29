@@ -1,6 +1,7 @@
 package contrroler;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.util.HashMap;
 import javax.servlet.ServletException;
@@ -24,14 +25,17 @@ public class User_Registration extends HttpServlet {
 
         HashMap<String, User> userMap = (HashMap<String, User>) req.getServletContext().getAttribute("userMap");
 
+        JsonObject jsonObject = new JsonObject();
+
         if (userMap.containsKey(user.getMobile())) {
-            resp.sendRedirect("user_registration.jsp?msg=error1");
+            jsonObject.addProperty("msg", "error1");
         } else {
-            
-           
-           
+            jsonObject.addProperty("msg", "success");
         }
 
+        resp.setContentType("application/json");
+        resp.getWriter().write(gson.toJson(jsonObject));
+        
     }
 
 }
