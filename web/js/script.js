@@ -24,7 +24,7 @@ function uerRegistration() {
             var respons = JSON.parse(request.responseText);
 
             if (respons.msg === "success") {
-                window.location.href = "user_login.html";
+                window.location = "user_login.html";
             } else {
                 error.innerHTML = "Mobile number already used!";
             }
@@ -55,7 +55,7 @@ function userLogin() {
             var respons = JSON.parse(request.responseText);
 
             if (respons.msg === "success") {
-                window.location.href = "index.html";
+                window.location = "index.html";
             } else {
                 error.innerHTML = "Invalid Login Details!";
             }
@@ -68,21 +68,8 @@ function userLogin() {
 
 }
 
+
+
 function userLogout() {
-    var request = new XMLHttpRequest();
-
-    request.onreadystatechange = function () {
-
-        if (request.readyState === 4 && request.status === 200) {
-            var respons = JSON.parse(request.responseText);
-
-            if (respons.msg === "success") {
-                window.location.href = "user_login.html";
-            }
-        }
-    };
-
-    request.open("POST", "User_Logout", true);
-    request.send();
-
+    window.location = "User_Logout";
 }

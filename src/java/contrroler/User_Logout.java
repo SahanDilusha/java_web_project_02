@@ -14,17 +14,7 @@ public class User_Logout extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Gson gson = new Gson();
-        JsonObject jsonObject = new JsonObject();
-
-        request.getSession().invalidate();
-
-        jsonObject.addProperty("msg", "success");
-
-        response.setContentType("application/json");
-        System.out.println(jsonObject);
-        response.getWriter().write(gson.toJson(jsonObject));
-
+        response.sendRedirect("user_login.html");
     }
 
 }
