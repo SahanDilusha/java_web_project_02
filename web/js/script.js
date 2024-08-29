@@ -68,8 +68,34 @@ function userLogin() {
 
 }
 
-
-
 function userLogout() {
     window.location = "User_Logout";
+}
+
+function viewUser() {
+
+    var mobile = document.getElementById("mobile");
+    var name = document.getElementById("name");
+    var country = document.getElementById("country");
+    var mobile = document.getElementById("mobile");
+    var gender = document.getElementById("gender");
+    
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+
+        if (request.readyState === 4 && request.status === 200) {
+            var respons = JSON.parse(request.responseText);
+
+            if (respons.msg === "success") {
+              
+            } else {
+              
+            }
+        }
+    };
+
+    request.open("GET", "Get_User", true);
+    request.send();
+  
 }
