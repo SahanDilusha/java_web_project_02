@@ -1,5 +1,6 @@
 function uerRegistration() {
 
+    var error = document.getElementById("error-text");
     var mobile = document.getElementById("mobile").value;
     console.log(mobile);
     var name = document.getElementById("name").value;
@@ -19,17 +20,24 @@ function uerRegistration() {
     console.log(jsonObj);
 
     var request = new XMLHttpRequest();
- 
+
     request.onreadystatechange = function () {
 
         if (request.readyState == 4 && request.status == 200) {
-            
+            var respons = JSON.parse(request.responseText);
+
+            if (respons.msg == "success") {
+                window.location.href = "user_login.html";
+            } else {
+                error.innerHTML = "Mobile number already used!";
+            }
+
         }
 
     }
 
     request.open("POST", "User_Registration", true);
-    request.setRequestHeader("Content-Type","application/json");
+    request.setRequestHeader("Content-Type", "application/json");
     request.send(jsonObj);
 
 }

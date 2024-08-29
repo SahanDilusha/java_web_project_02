@@ -25,15 +25,19 @@ public class User_Registration extends HttpServlet {
 
         HashMap<String, User> userMap = (HashMap<String, User>) req.getServletContext().getAttribute("userMap");
 
+        
+        
         JsonObject jsonObject = new JsonObject();
 
         if (userMap.containsKey(user.getMobile())) {
             jsonObject.addProperty("msg", "error1");
         } else {
+            userMap.put(user.getMobile(), user);
             jsonObject.addProperty("msg", "success");
         }
 
         resp.setContentType("application/json");
+        System.out.println(jsonObject);
         resp.getWriter().write(gson.toJson(jsonObject));
         
     }
