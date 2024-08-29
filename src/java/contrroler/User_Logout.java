@@ -1,7 +1,5 @@
 package contrroler;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
