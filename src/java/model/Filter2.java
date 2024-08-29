@@ -26,7 +26,7 @@ public class Filter2 implements Filter{
         if (req.getSession().getAttribute("user") == null) {
               chain.doFilter(request, response);
         }else{
-            res.sendRedirect("index.jsp");
+            res.sendRedirect("index.html");
         }
     }
 

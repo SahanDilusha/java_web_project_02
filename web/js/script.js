@@ -56,6 +56,7 @@ function userLogin() {
 
             if (respons.msg === "success") {
                 window.location = "index.html";
+                alert(respons);
             } else {
                 error.innerHTML = "Invalid Login Details!";
             }
@@ -77,9 +78,8 @@ function viewUser() {
     var mobile = document.getElementById("mobile");
     var name = document.getElementById("name");
     var country = document.getElementById("country");
-    var mobile = document.getElementById("mobile");
     var gender = document.getElementById("gender");
-    
+
     var request = new XMLHttpRequest();
 
     request.onreadystatechange = function () {
@@ -87,15 +87,17 @@ function viewUser() {
         if (request.readyState === 4 && request.status === 200) {
             var respons = JSON.parse(request.responseText);
 
-            if (respons.msg === "success") {
-              
-            } else {
-              
-            }
+            var user = JSON.parse(request.responseText);
+
+            mobile.innerHTML = user.mobile;
+            name.innerHTML = user.name;
+            country.innerHTML = user.country;
+            gender.innerHTML = user.gender;
+
         }
     };
 
     request.open("GET", "Get_User", true);
     request.send();
-  
+
 }

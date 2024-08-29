@@ -24,7 +24,7 @@ public class Filter1 implements Filter{
         HttpServletResponse res = (HttpServletResponse) response;
         
         if (req.getSession().getAttribute("user") == null) {
-            res.sendRedirect("user_login.jsp");
+            res.sendRedirect("user_login.html");
         }else{
             chain.doFilter(request, response);
         }
